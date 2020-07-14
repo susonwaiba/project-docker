@@ -35,7 +35,7 @@ RUN pecl install imagick
 RUN docker-php-ext-enable imagick
 RUN pecl install redis
 RUN docker-php-ext-enable redis
-RUN pecl install mongodb-beta
+RUN pecl install mongodb-1.8.0beta2
 RUN docker-php-ext-enable mongodb
 
 # Installing symfony cli
