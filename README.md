@@ -1,14 +1,16 @@
 # EveryWorkflow Project Docker
 
-A docker for every workflow project.
+A docker for every workflow project
 
 
 ## Stack
 
 - nginx
 - php-7.4
-    - mongodb-1.8.0
-    - redis
+    - mongodb-1.8.0 extension
+    - redis extension
+    - composer cli
+    - symfony cli
 - redis
 - mongodb
 
