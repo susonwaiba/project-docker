@@ -18,4 +18,3 @@ RUN pecl install redis
 RUN docker-php-ext-enable redis
 RUN pecl install mongodb-1.8.0
 RUN docker-php-ext-enable mongodb
-
