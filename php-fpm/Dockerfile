@@ -9,6 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libicu-dev \
     libonig-dev \
     libzip-dev \
     libpng-dev
+RUN apt-get install -y libcurl4-openssl-dev \
+    pkg-config \
+    libssl-dev
 
 # Installing extensions
 RUN docker-php-ext-install pdo_mysql intl mbstring zip exif pcntl bcmath opcache gd
@@ -18,3 +21,5 @@ RUN pecl install redis
 RUN docker-php-ext-enable redis
 RUN pecl install mongodb-1.8.0
 RUN docker-php-ext-enable mongodb
+
+CMD ["php-fpm", "-F"]
