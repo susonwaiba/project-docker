@@ -29,6 +29,7 @@ A docker for every workflow project
 - Home URL: `http://{localhost/any_valid_host}:2000/` 
 - For more info and change, check `docker-compose.yml`
 - Set `www-data` as file owner
+- `php-cli` container stays alive due to `tty: true` in `docker-compose.yml` file
 - `project` dir is code root dir
 ```
 - <project-docker> <-- docker root dir
@@ -43,3 +44,13 @@ A docker for every workflow project
 ```
 mongodb://root:root@localhost:27017/?authSource=admin
 ```
+
+
+## Phpstorm
+
+Simply add remote docker php cli interpreter (php-cli), change path mapping and configure remote interpreter everywhere.
+
+
+## Container + vscode
+
+With vscode's remote container extension, we can simply connect into `php-cli` container.
