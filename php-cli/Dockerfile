@@ -9,6 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libicu-dev \
     libonig-dev \
     libzip-dev \
     libpng-dev
+RUN apt-get install -y libcurl4-openssl-dev \
+    pkg-config \
+    libssl-dev
 
 # Installing extensions
 RUN docker-php-ext-install pdo_mysql intl mbstring zip exif pcntl bcmath opcache gd
@@ -26,6 +29,7 @@ RUN apt-get install -y vim
 RUN apt-get install -y zip
 RUN apt-get install -y unzip
 RUN apt-get install -y wget
+RUN apt-get install -y screenfetch
 
 # Installing composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -33,3 +37,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Installing symfony cli
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN echo 'export PATH="$HOME/.symfony/bin:$PATH"' >> ~/.bashrc
+
+ENV MAGENTO_ROOT /var/www/project
+
+CMD ["bash"]
