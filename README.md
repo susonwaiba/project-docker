@@ -15,7 +15,7 @@ A docker for every workflow project
 
 ## Setup
 
-- git clone this repo
+- `git clone https://github.com/everyworkflow/project-docker.git`
 - `mkdir project` or `git clone <some_git_repo_url> project`
 - `docker-compose up -d`
 - `docker-compose exec php-cli bash`
