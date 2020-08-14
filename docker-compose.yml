@@ -2,7 +2,8 @@ version: '3'
 
 services:
   php-fpm:
-    build: php-fpm
+    image: everyworkflow/php-fpm:latest
+    # build: php-fpm
     depends_on:
       - mongodb
       - redis
@@ -17,7 +18,8 @@ services:
         max-size: "10m"
 
   php-cli:
-    build: php-cli
+    image: everyworkflow/php-cli:latest
+    # build: php-cli
     working_dir: /var/www/project
     depends_on:
       - mongodb
