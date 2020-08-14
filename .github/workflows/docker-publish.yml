@@ -68,7 +68,7 @@ jobs:
           
           # For php-fpm
           
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_FPM
+          IMAGE_ID=everyworkflow/$IMAGE_FPM
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
@@ -90,7 +90,7 @@ jobs:
           
           # For php-cli
           
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/$IMAGE_CLI
+          IMAGE_ID=everyworkflow/$IMAGE_CLI
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
