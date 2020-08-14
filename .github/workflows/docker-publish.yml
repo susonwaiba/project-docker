@@ -53,10 +53,8 @@ jobs:
 
       - name: Build image
         run: |
-          
           # For php-fpm
           docker build . --file php-fpm/Dockerfile --tag $IMAGE_PHP_FPM
-          
           # For php-cli
           docker build . --file php-cli/Dockerfile --tag $IMAGE_PHP_CLI
 
@@ -65,9 +63,7 @@ jobs:
 
       - name: Push image
         run: |
-          
           # For php-fpm
-          
           IMAGE_ID=everyworkflow/$IMAGE_PHP_FPM
 
           # Change all uppercase to lowercase
@@ -89,7 +85,6 @@ jobs:
           docker push $IMAGE_ID:$VERSION
           
           # For php-cli
-          
           IMAGE_ID=everyworkflow/$IMAGE_PHP_CLI
 
           # Change all uppercase to lowercase
