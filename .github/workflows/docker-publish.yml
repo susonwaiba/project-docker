@@ -1,0 +1,33 @@
+name: Docker
+
+on:
+  push:
+    # Run tests for master changes
+    branches:
+      - master
+
+    # Run tests for tag releases
+    tags:
+      - v*
+
+  # Run tests for any PRs
+  pull_request:
+
+env:
+  IMAGE_PHP_FPM: php-fpm
+  IMAGE_PHP_CLI: php-cli
+
+jobs:
+  # Run build test
+  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build php-fpm docker image
+        run: docker build . --file php-fpm/Dockerfile
+
+      - name: Build php-cli docker image
+        run: docker build . --file php-cli/Dockerfile
