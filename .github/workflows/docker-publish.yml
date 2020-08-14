@@ -68,7 +68,7 @@ jobs:
           
           # For php-fpm
           
-          IMAGE_ID=everyworkflow/$IMAGE_FPM
+          IMAGE_ID=everyworkflow/$IMAGE_PHP_FPM
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
@@ -85,12 +85,12 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker tag $IMAGE_PHP_FPM $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
           
           # For php-cli
           
-          IMAGE_ID=everyworkflow/$IMAGE_CLI
+          IMAGE_ID=everyworkflow/$IMAGE_PHP_CLI
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
@@ -107,5 +107,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          docker tag $IMAGE_PHP_CLI $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
