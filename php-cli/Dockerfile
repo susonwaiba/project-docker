@@ -31,13 +31,15 @@ RUN apt-get install -y unzip
 RUN apt-get install -y wget
 RUN apt-get install -y screenfetch
 
+# Updating php.ini
+ADD conf/php.ini /usr/local/etc/php/php.ini
+
 # Installing composer
+VOLUME /root/.composer/cache
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Installing symfony cli
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN echo 'export PATH="$HOME/.symfony/bin:$PATH"' >> ~/.bashrc
-
-ENV MAGENTO_ROOT /var/www/project
+RUN echo 'export PATH="$HOME/.symfony/bin:$PATH"' >> ~/.bashrc+
 
 CMD ["bash"]
